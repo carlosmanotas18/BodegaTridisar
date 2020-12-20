@@ -16,7 +16,7 @@
 								<form>
 									<div class="col-md-12">
 										<input type="hidden" name="view" value="sell">
-										<input type="text" name="product" class="form-control">
+										<input type="text" name="product" class="form-control" placeholder="Escribe el nombre o código">
 										<br>
 										<center><button type="submit" class="btn btn-primary align-self-center"><i class="icon ion-md-arrow-dropup-circle"></i> Buscar</button></center>
 									</div>

@@ -1,68 +1,80 @@
-<div class="row">
-	<div class="col-md-12">
+<div id="content">
+	<section class="bg-mix py-3">
+		<div class="container">
+			<div class="card rounded-0">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-md-12">
 
-<!-- Single button -->
-<div class="btn-group pull-right">
-<a href="./index.php?view=boxhistory" class="btn btn-default"><i class="fa fa-clock-o"></i> Historial</a>
-</div>
-		<h1><i class='fa fa-archive'></i> Corte de Caja #<?php echo $_GET["id"]; ?></h1>
-		<div class="clearfix"></div>
-
-
-<?php
-$products = SellData::getByBoxId($_GET["id"]);
-if(count($products)>0){
-$total_total = 0;
-?>
-<br>
-<table class="table table-bordered table-hover	">
-	<thead>
-		<th></th>
-		<th>Total</th>
-		<th>Fecha</th>
-	</thead>
-	<?php foreach($products as $sell):?>
-
-	<tr>
-		<td style="width:30px;">
-<a href="./index.php?view=onesell&id=<?php echo $sell->id; ?>" class="btn btn-default btn-xs"><i class="fa fa-arrow-right"></i></a>			
+							<!-- Single button -->
+							
+							<center><h1><i class='fa fa-archive'></i> Corte de Caja #<?php echo $_GET["id"]; ?></h1></center>
+							<div class="clearfix"></div>
 
 
-<?php
-$operations = OperationData::getAllProductsBySellId($sell->id);
-?>
-</td>
-		<td>
+							<?php
+							$products = SellData::getByBoxId($_GET["id"]);
+							if(count($products)>0){
+								$total_total = 0;
+								?>
+								<br>
+								<table class="table table-bordered table-hover	">
+									<thead>
+										<th></th>
+										<th>Total</th>
+										<th>Fecha</th>
+									</thead>
+									<?php foreach($products as $sell):?>
 
-<?php
-$total=0;
-	foreach($operations as $operation){
-		$product  = $operation->getProduct();
-		$total += $operation->q*$product->price_out;
-	}
-		$total_total += $total;
-		echo "<b>$ ".number_format($total,2,".",",")."</b>";
+										<tr>
+											<td style="width:30px;">
+												<a href="./index.php?view=onesell&id=<?php echo $sell->id; ?>" class="btn btn-default btn-xs"><i class="iconify" data-icon="ion:eye"></i></a>			
 
-?>			
 
-		</td>
-		<td><?php echo $sell->created_at; ?></td>
-	</tr>
+												<?php
+												$operations = OperationData::getAllProductsBySellId($sell->id);
+												?>
+											</td>
+											<td>
 
-<?php endforeach; ?>
+												<?php
+												$total=0;
+												foreach($operations as $operation){
+													$product  = $operation->getProduct();
+													$total += $operation->q*$product->price_out;
+												}
+												$total_total += $total;
+												echo "<b>$ ".number_format($total,2,".",",")."</b>";
 
-</table>
-<h1>Total: <?php echo "$ ".number_format($total_total,2,".",","); ?></h1>
-	<?php
-}else {
+												?>			
 
-?>
-	<div class="jumbotron">
-		<h2>No hay ventas</h2>
-		<p>No se ha realizado ninguna venta.</p>
-	</div>
+											</td>
+											<td><?php echo $sell->created_at; ?></td>
+										</tr>
 
-<?php } ?>
-<br><br><br><br><br><br><br><br><br><br>
-	</div>
+									<?php endforeach; ?>
+
+								</table>
+								<center><h3>Total: <?php echo "$ ".number_format($total_total,2,".",","); ?></h3>
+
+								<a href="./index.php?view=boxhistory" class="btn btn-primary"><i class="fa fa-clock-o"></i> Volver</a> </center>
+							</div>
+								<?php
+							}else {
+
+								?>
+								<div class="jumbotron">
+									<h2>No hay ventas</h2>
+									<p>No se ha realizado ninguna venta.</p>
+									<center><a href="./index.php?view=boxhistory" class="btn btn-primary"><i class="fa fa-clock-o"></i> Volver</a> </center>
+								</div>
+
+							<?php } ?>
+							<br><br><br><br><br><br><br><br><br><br>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </div>

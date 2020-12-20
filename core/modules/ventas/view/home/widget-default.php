@@ -77,13 +77,16 @@ foreach($products as $product){
 				</div>
 			</div>
 		</section>
-		<div class="col-lg-9 col-md-8">
+		<div class="col-lg-9 col-md-3" >
 
-			<h4 class="font-weight-bold">Productos con poco inventario</h4>
+			
 		</div>
 		<section class="bg-mix py-3">			
 			<div class="container">
 				<div class="card rounded-0">
+					<div class="card-header bg-light">
+						<h5 class="font-weight-bold mb-0">PRODUCTOS CON POCO INVENTARIO</h5>
+					</div>
 					<div class="card-body">
 						<div class="row">
 							<?php
@@ -129,8 +132,10 @@ foreach($products as $product){
 
 								<?php
 								foreach($curr_products as $product):
+
 									$q=OperationData::getQYesF($product->id);
 									?>
+
 									<?php if($q<$product->inventary_min):?>
 
 										<div class="col-lg-3 col-md-6 d-flex stat my-3">
@@ -165,6 +170,7 @@ foreach($products as $product){
 										</div>
 
 									<?php endif;?>
+
 									<?php
 								endforeach;
 								?>
@@ -199,7 +205,7 @@ foreach($products as $product){
 							<div class="col-lg-8 my-3">
 								<div class="card rounded-0">
 									<div class="card-header bg-light">
-										<h6 class="font-weight-bold mb-0">Número de usuarios de paga</h6>
+										<h6 class="font-weight-bold mb-0">Crecimiento de la empresa</h6>
 									</div>
 									<div class="card-body">
 										<canvas id="myChart" width="300" height="150"></canvas>

@@ -20,22 +20,23 @@ while($r = $query->fetch_array()){
 }
 
 if($found==true) {
-	session_start();
+	
 //	print $userid;
 	$_SESSION['user_id']=$userid ;
 //	setcookie('userid',$userid);
 //	print $_SESSION['userid'];
 	print "Cargando ... $user";
-	
 	print "<script>window.location='index.php?view=home';</script>";
+	session_start();
 }else {
-	
 	print "<script>window.location='index.php?view=login';</script>";
-	
+
+
 }
 
 }else{
 	setcookie("error_de_inicio","false");
+
 	print "<script>window.location='index.php?view=home';</script>";
 
 	

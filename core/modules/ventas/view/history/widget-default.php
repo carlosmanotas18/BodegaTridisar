@@ -10,9 +10,13 @@
 						$operations = OperationData::getAllByProductId($product->id);
 						?>
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-lg-9 col-md-8">
 
 								<h1><?php echo $product->name;; ?> <small>Historial</small></h1>
+							</div>
+							<div class="col-lg-2 col-md-4">
+								<a href="javascript:history.back(-1);" class="btn btn-primary ">Volver <i class="fa fa-arrow-right"></i></a>
+								
 							</div>
 						</div>
 
@@ -28,7 +32,7 @@
 								?>
 								<div class="jumbotron">
 									<center>
-										<h2>Entradas</h2>
+										<h3>Entradas</h3>
 										<h1><?php echo $itotal; ?></h1>
 									</center>
 								</div>
@@ -47,7 +51,7 @@
 								?>
 								<div class="jumbotron">
 									<center>
-										<h2>Disponibles</h2>
+										<h3>Disponibles</h3>
 										<h1><?php echo $total; ?></h1>
 									</center>
 								</div>
@@ -67,7 +71,7 @@
 								?>
 								<div class="jumbotron">
 									<center>
-										<h2>Salidas</h2>
+										<h3>Salidas</h3>
 										<h1><?php echo $ototal; ?></h1>
 									</center>
 								</div>

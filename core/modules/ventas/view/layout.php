@@ -11,6 +11,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style2.css">
 
   <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css?family=Muli:300,700&display=swap" rel="stylesheet">
@@ -34,11 +35,10 @@
       ?>
       <!-- Sidebar -->
       <div id="sidebar-container" class="bg-primary">
-        <div class="logo">
-          <h4 class="text-light font-weight-bold mb-0"><a href="index.php?view=home">TRIDISAR SAS</a></h4>
-        </div>
+        
         <div class="menu">
-
+          <a href="index.php?view=home" class="d-block text-light p-3 border-0"><i class="icon ion-md-home lead mr-2"></i>
+          Inicio</a>
           <a href="index.php?view=sell" class="d-block text-light p-3 border-0"><i class="icon ion-md-cash lead mr-2"></i>
           Realizar ventas</a>
           <a href="index.php?view=clients" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
@@ -66,9 +66,9 @@
             <a href="index.php?view=users" class="d-block text-light p-3 border-0"><i class="icon ion-md-person lead mr-2"></i>
             Usuarios</a>
           <?php endif;?>
-          <?php if($u->is_admin):?>
-          <a href="index.php?view=re" class="d-block text-light p-3 border-0"><i class="icon ion-md-stats lead mr-2"></i>
-          Reabastecer</a>
+         <?php if($u->is_admin):?>
+          <a href="index.php?view=box" class="d-block text-light p-3 border-0"><i class="icon ion-md-stats lead mr-2"></i>
+          Caja</a>
         <?php endif;?>
         <?php if($u->is_admin):?>
 

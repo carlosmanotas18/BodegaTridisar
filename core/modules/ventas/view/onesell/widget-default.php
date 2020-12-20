@@ -73,6 +73,7 @@
 							?>
 						</table>
 						<br><br><h1>Total: $ <?php echo number_format($total,2,'.',','); ?></h1>
+						<center><a href="javascript:history.back(-1);" class="btn btn-primary ">Volver <i class="fa fa-arrow-right"></i></a></center>
 						<?php
 
 						?>	

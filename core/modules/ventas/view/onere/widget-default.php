@@ -72,7 +72,8 @@
 							}
 							?>
 						</table>
-						<br><br><h1>Total: $ <?php echo number_format($total,2,'.',','); ?></h1>
+						<center><h3>Total: $ <?php echo number_format($total,2,'.',','); ?></h3>
+						<a href="index.php?view=res" class="btn btn-primary">Ver reabastecimientos</a></center>
 						<?php
 
 						?>	
